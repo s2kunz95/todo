@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import TodoNav from './Components/TodoNav';
+import TodoList from './Components/TodoList';
+import TodoAdd from './Components/TodoAdd';
+
+import { TodoProvider } from './Contexts/TodoContext';
+
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCalendarCheck, faListUl, faCheck, faTimesCircle, faArrowDown, faPlus } from '@fortawesome/free-solid-svg-icons';
+library.add(far, faCalendarCheck, faListUl, faCheck, faTimesCircle, faArrowDown, faPlus);
+
+class App extends Component {
+  render() {
+    return (
+      <TodoProvider>
+        <div className="App">
+          <TodoNav />
+          <TodoList />
+          <TodoAdd />
+        </div>
+      </TodoProvider>
+    );
+  }
 }
 
 export default App;

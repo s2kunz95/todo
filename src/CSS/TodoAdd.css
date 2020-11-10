@@ -1,0 +1,195 @@
+.TodoAdd {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.TodoAdd__input {
+    position: relative;
+    bottom: 0;
+    margin: 0 auto;
+    width: 0;
+}
+
+.TodoAdd__input input {
+    font-size: 1.3rem;
+    color: #696969;
+    padding: 0 25% 0 6%;
+    width: 100%;
+    height: 5rem;
+    z-index: 1000;
+    border: none;
+    outline: none;
+    border-radius: 5rem;
+    box-shadow: 0 1rem 28px 0 rgba(0, 0, 0, .2);
+    transition: all 1s;
+    transform: translate(0, 50%);
+}
+
+.TodoAdd__input input::placeholder {
+    color: inherit;
+}
+
+.TodoAdd .TodoAdd__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-color: #ffba74;
+    font-size: 2rem;
+    color: #FFF;
+}
+
+.TodoAdd .TodoAdd__btn .TodoAdd__btn-plus {
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.TodoAdd .TodoAdd__btn .TodoAdd__btn-check {
+    opacity: 0;
+}
+
+/* Animation */
+
+.TodoAdd .TodoAdd__input.active {
+    animation: input-show 1s forwards;
+}
+
+.TodoAdd .TodoAdd__input {
+    animation: input-hide 1s forwards;
+}
+
+.TodoAdd .TodoAdd__input.active .TodoAdd__btn {
+    animation: btn-show 1s forwards;
+}
+
+.TodoAdd .TodoAdd__input .TodoAdd__btn {
+    animation: btn-hide 1s forwards;
+}
+
+.TodoAdd .TodoAdd__input.active .TodoAdd__btn .TodoAdd__btn-plus {
+    animation: plus-hide 1s forwards;
+}
+
+.TodoAdd .TodoAdd__input.active .TodoAdd__btn .TodoAdd__btn-check {
+    animation: check-show 1s forwards;
+}
+
+.TodoAdd .TodoAdd__input .TodoAdd__btn .TodoAdd__btn-plus {
+    animation: plus-show 1s forwards;
+}
+
+.TodoAdd .TodoAdd__input .TodoAdd__btn .TodoAdd__btn-check {
+    animation: check-hide 1s forwards;
+}
+
+@keyframes btn-show {
+    0% {
+        background-color: #ffba74;
+        transform: translate(-50%, 50%);
+    }
+    100% {
+        background-color: #5cb85c;
+        transform: translate(-100%, 50%);
+    }
+}
+
+@keyframes btn-hide {
+    0% {
+        background-color: #5cb85c;
+        transform: translate(-100%, 50%);
+    }
+    100% {
+        background-color: #ffba74;
+        transform: translate(-50%, 50%);
+    }
+}
+
+@keyframes plus-hide {
+    0% {
+        opacity: 1;
+        transform: rotate(-90deg);
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes plus-show {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes check-hide {
+    0% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes check-show {
+    0% {
+        opacity: 0;
+        transform: rotate(-90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes input-show {
+    0% {
+        width: 0;
+        bottom: 0;
+    }
+    20% {
+        bottom: .5rem;
+    }
+    
+    100% {
+        width: 100%;
+        bottom: .5rem;
+    }
+}
+
+@keyframes input-hide {
+    0% {
+        width: 100%;
+        bottom: .5rem;
+    }
+    80% {
+        width: 0;
+        bottom: .5rem;
+    }
+    100% {
+        width: 0;
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .TodoAdd .TodoAdd__btn {
+        font-size: 1.5rem;
+    }
+}

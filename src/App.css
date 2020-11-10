@@ -1,38 +1,60 @@
 .App {
+  position: relative;
+  width: 35%;
+  height: 75vh;
   text-align: center;
+  margin: 12.5vh auto;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 28px 0 rgba(0, 0, 0, .2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .todoList {
+  position: relative;
+  height: calc(100% - 10rem);
+  overflow: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App .todoList::-webkit-scrollbar {
+  display: none;
+}
+
+.App .todoList::-webkit-scrollbar-thumb {
+  background-color: #f00;
+}
+
+.App .todoList .todoList__scroll {
+  position: sticky;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-52%, 0);
+  color: #9b70c8;
+  background-color: #ffc2c2;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  line-height: 2rem;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.App .todoList .todoList__scroll:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .App {
+    width: 60%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 640px) {
+  .App {
+    width: 90%;
+    height: 75vh;
+    margin: 5vh auto 5vh;
   }
 }
+
