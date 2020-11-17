@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
 
+import './App.css';
 import TodoNav from './Components/TodoNav';
 import TodoList from './Components/TodoList';
 import TodoAdd from './Components/TodoAdd';
