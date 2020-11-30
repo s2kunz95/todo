@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import TodoNav from './Components/TodoNav';
-import TodoList from './Components/TodoList';
-import TodoAdd from './Components/TodoAdd';
+import TodoNav from './Containers/TodoNav';
+import TodoList from './Containers/TodoList';
+import TodoAdd from './Containers/TodoAdd';
 
-import { TodoProvider } from './Contexts/TodoContext';
 
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -15,13 +14,11 @@ library.add(far, faCalendarCheck, faListUl, faCheck, faTimesCircle, faArrowDown,
 class App extends Component {
   render() {
     return (
-      <TodoProvider>
-        <div className="App">
-          <TodoNav />
-          <TodoList />
-          <TodoAdd />
-        </div>
-      </TodoProvider>
+      <div className="App">
+        <TodoNav />
+        <TodoList />
+        <TodoAdd />
+      </div>
     );
   }
 }
